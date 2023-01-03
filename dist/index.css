@@ -1,0 +1,181 @@
+:root {
+    --Scissors-Gradient1: hsl(39, 89%, 49%);
+    --Scissors-Gradient2: hsl(40, 84%, 53%);
+
+    --Paper-Gradient1: hsl(230, 89%, 62%);
+    --Paper-Gradient2: hsl(230, 89%, 65%);
+
+    --Rock-Gradient1: hsl(349, 71%, 52%);
+    --Rock-Gradient2: hsl(349, 70%, 56%);
+
+    --Lizard-Gradient1: hsl(261, 73%, 60%);
+    --Lizard-Gradient2: hsl(261, 72%, 63%);
+
+    --Cyan1: hsl(189, 59%, 53%);
+    --Cyan2: hsl(189, 58%, 57%);
+
+    --Dark-Text: hsl(229, 25%, 31%);
+    --Score-Text: hsl(229, 64%, 46%);
+    --Header-Outline: hsl(217, 16%, 45%);
+    --Radial-Gradient: hsl(214, 47%, 23%), hsl(237, 49%, 15%);
+}
+
+/* - Family: [Barlow Semi Condensed](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
+- Weights: 600, 700 */
+body {
+    background-repeat: no-repeat;
+    background-image: radial-gradient(var(--Radial-Gradient));
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 1rem);
+}
+
+img {
+    width: 100%;
+}
+
+header .container {
+    max-width: 600px;
+    margin-top: 1.25rem;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 3px var(--Header-Outline);
+    padding: calc(.5rem + .75vmin);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
+
+header .container .logo {
+    background-color: wheat;
+}
+
+header .container img {
+    height: 100%;
+    width: auto;
+    height: 4rem;
+}
+
+header .score {
+    background-color: white;
+    padding: .75rem 1.25rem;
+    border-radius: .25rem;
+    -webkit-border-radius: .25rem;
+    -moz-border-radius: .25rem;
+    -ms-border-radius: .25rem;
+    -o-border-radius: .25rem;
+}
+
+header .score>* {
+    margin: 0;
+    text-align: center;
+}
+
+header .score>h2 {
+    font-size: .85rem;
+    text-transform: uppercase;
+    color: var(--Score-Text);
+}
+
+header .score>p {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--Dark-Text);
+}
+
+/* main */
+main {
+    padding-top: min( calc(5rem + 5vw), 7rem);
+}
+
+.frame {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4rem;
+    width: 60vw;
+    aspect-ratio: 1 / 0.866;
+    /* background-color: red; */
+    max-width: 280px;
+}
+
+.frame button {
+    --lenght: min(calc( 12vw + 5rem), 12rem);
+    height: var(--lenght);
+    width: var(--lenght);
+    border-radius: 50%;
+    padding: 1.5rem;
+    padding: calc( .2 * var(--lenght));
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.frame button.paper {
+    left: 1rem;
+    top: 1rem;
+    border: solid var(--Paper-Gradient2) calc( .125 * var(--lenght));
+    box-shadow: inset 0 calc( .04 * var(--lenght)) 0px #c2c0c0, 0 calc( .05 * var(--lenght)) 0px var(--Paper-Gradient1);
+}
+
+.frame button.scissors {
+    right: 1rem;
+    top: 1rem;
+    transform: translate(50%, -50%);
+    -webkit-transform: translate(50%, -50%);
+    -moz-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
+    -o-transform: translate(50%, -50%);
+    border: solid var(--Scissors-Gradient2) calc( .125 * var(--lenght));
+    box-shadow: inset 0 calc( .04 * var(--lenght)) 0px #c2c0c0, 0 calc( .05 * var(--lenght)) 0px var(--Scissors-Gradient1);
+}
+
+.frame button.rock {
+    border: solid var(--Rock-Gradient2) calc( .125 * var(--lenght));
+    box-shadow: inset 0 calc( .04 * var(--lenght)) 0px #c2c0c0, 0 calc( .05 * var(--lenght)) 0px var(--Rock-Gradient1);
+    left: 50%;
+    top: calc(100% - 1.25rem);
+}
+
+main .rules {
+    padding: 1rem;
+    margin-top: calc(7rem);
+    display: grid;
+}
+
+main .rules button {
+    background-color: transparent;
+    border: solid 2px #ffffffc0;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    padding: .5rem 1.5rem;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    text-align: center;
+}
+
+footer {
+    margin-top: auto;
+}
