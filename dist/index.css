@@ -22,6 +22,10 @@
 
 /* - Family: [Barlow Semi Condensed](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
 - Weights: 600, 700 */
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-repeat: no-repeat;
     background-image: radial-gradient(var(--Radial-Gradient));
@@ -317,6 +321,59 @@ footer {
     margin-top: auto;
 }
 
+.modal {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: var(--Dark-Text);
+    display: none;
+}
+.modal.active{
+    display: block;
+}
+.modal .overlay {
+    background-color: #00000030;
+    width: 100%;
+    height: 100%;
+    display: block;
+    place-items: center;
+}
+
+.modal .content {
+    height: 100%;
+    background-color: white;
+    padding: 2rem;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modal .content button {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+}
+
+.modal h1 {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    line-height: 1em;
+}
+
 @media screen and (min-width: 820px) {
     .frame.step_one {
         max-width: 320px;
@@ -358,5 +415,33 @@ footer {
     .frame.step_one .computer p,
     .frame.step_one .player p {
         top: calc(var(--length) / -2 - 4rem);
+    }
+
+    .modal .overlay {
+        display: grid;
+    }
+
+    .modal .content {
+        height: auto;
+        width: fit-content;
+        position: relative;
+    }
+
+    .modal .content button {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .modal h1 {
+        text-align: left;
+        margin-bottom: 3rem;
+    }
+    main .rules {
+        position: absolute;
+        margin-top: 0;
+        display: block;
+        right: calc(10vh + 2rem);
+        bottom: 2rem;
     }
 }

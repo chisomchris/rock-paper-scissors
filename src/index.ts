@@ -1,4 +1,13 @@
 const buttons = document.querySelectorAll('.frame > button') as NodeListOf<HTMLButtonElement>
+const rulesBtn = document.querySelector('.rules button') as HTMLButtonElement
+const rulesModal = document.querySelector('section.modal') as HTMLDivElement
+const modalCloseBtn = document.querySelector('.modal .content button') as HTMLButtonElement
+modalCloseBtn.addEventListener('click', () => {
+    rulesModal.classList.remove('active')
+})
+rulesBtn.addEventListener('click', () => {
+    rulesModal.classList.add('active')
+})
 let score = 0
 const scoreElem = document.querySelector('.score p') as HTMLParagraphElement
 scoreElem.textContent = `${score}`

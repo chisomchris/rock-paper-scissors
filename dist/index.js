@@ -1,5 +1,14 @@
 "use strict";
 const buttons = document.querySelectorAll('.frame > button');
+const rulesBtn = document.querySelector('.rules button');
+const rulesModal = document.querySelector('section.modal');
+const modalCloseBtn = document.querySelector('.modal .content button');
+modalCloseBtn.addEventListener('click', () => {
+    rulesModal.classList.remove('active');
+});
+rulesBtn.addEventListener('click', () => {
+    rulesModal.classList.add('active');
+});
 let score = 0;
 const scoreElem = document.querySelector('.score p');
 scoreElem.textContent = `${score}`;
