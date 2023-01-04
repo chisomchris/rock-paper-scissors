@@ -160,6 +160,10 @@ main {
     --padding: calc(.75rem + 2vw);
 }
 
+.frame.hide {
+    display: none;
+}
+
 .frame.step_one .computer .empty {
     background-color: hsl(237, 49%, 15%);
     height: calc((1 - 0.125) * var(--length));
@@ -181,8 +185,9 @@ main {
 }
 
 .frame.step_one .player button {
-    right: none;
+    right: auto;
     left: var(--padding);
+    top: 1rem;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -219,7 +224,8 @@ main {
 
 .frame.step_one .computer button {
     right: var(--padding);
-    left: none;
+    left: auto;
+    top: 1rem;
     transform: translate(50%, -50%);
     -webkit-transform: translate(50%, -50%);
     -moz-transform: translate(50%, -50%);
@@ -258,7 +264,11 @@ main {
     font-size: 2.5rem;
 }
 
-.frame.step_one .play_again>button {
+.play_again>button {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--Dark-Text);
     position: relative;
     height: auto;
     width: 100%;
@@ -274,6 +284,10 @@ main {
     -moz-transform: none;
     -ms-transform: none;
     -o-transform: none;
+}
+
+.play_again>button:hover {
+    color: var(--Rock-Gradient1);
 }
 
 main .rules {
@@ -340,8 +354,9 @@ footer {
         -ms-border-radius: .5rem;
         -o-border-radius: .5rem;
     }
-    
-    .frame.step_one .computer p, .frame.step_one .player p {
-        top: calc( var(--length) / -2 - 4rem);
+
+    .frame.step_one .computer p,
+    .frame.step_one .player p {
+        top: calc(var(--length) / -2 - 4rem);
     }
 }
